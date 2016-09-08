@@ -1,0 +1,12 @@
+.logout {
+  .logout-button {
+    img {
+      width: 2.5rem;
+    }
+
+    &:last-child {
+      padding-left: 0.7rem;
+      border-left: 1px solid white;
+    }
+  }
+}

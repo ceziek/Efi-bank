@@ -1,0 +1,22 @@
+.list {
+  max-height: 23.5rem;
+  margin: 1rem;
+
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+  ul {
+    list-style: none;
+    background-color: #fff;
+
+    li {
+      border-bottom: 1px solid #000;
+    }
+  }
+
+  p,
+  span {
+    white-space: nowrap;
+    margin: 0.5rem 0;
+  }
+}
