@@ -1,21 +1,21 @@
 .user-panel {
   color: #fff;
-
-  h4 {
+  h2 {
     text-overflow : ellipsis;
     white-space: nowrap;
     overflow: hidden;
   }
-
   .buttons {
     width: 50%;
     display: flex;
     align-items: center;
     justify-content: space-around;
-
-    img {
-      color: #fff;
-      height: 1.75rem;
+    svg {
+      height: 1.75rem; width: 1.75rem;
+      transition: all .6s;
+      &:hover {
+        fill: $accent-color;
+      }
     }
   }
 }

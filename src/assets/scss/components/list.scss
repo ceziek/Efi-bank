@@ -1,22 +1,37 @@
 .list {
-  max-height: 23.5rem;
-  margin: 1rem;
-
-  overflow-y: scroll;
-  overflow-x: hidden;
-
+  width: 100%;
+  max-height: 24rem;
+  overflow-y: scroll; overflow-x: hidden;
+  border-radius: 0.5rem;
   ul {
-    list-style: none;
+    margin: 0;
     background-color: #fff;
+    list-style: none;
+  }
+}
 
-    li {
-      border-bottom: 1px solid #000;
+.list-element {
+  width: 100%;
+  padding: 0.5rem;
+  border-bottom: 1px solid $main-color;
+  div {
+    width: 100%;
+    padding-left: 1rem;
+    p {
+      text-transform: capitalize;
     }
   }
-
-  p,
   span {
+    font-family: "Roboto Condensed Light", sans-serif;
     white-space: nowrap;
-    margin: 0.5rem 0;
+  }
+  select {
+    width: auto;
+    border: none;
+    margin: 0;
+    &:focus {
+      border: none;
+      outline: none;
+    }
   }
 }

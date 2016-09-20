@@ -2,14 +2,15 @@
 $(document).foundation();
 
 function locale(num) {
-    return num.toLocaleString('pl', {style: 'currency', currency: 'PLN'})
+    return num.toLocaleString('pl')
 }
 
-let userPanels = new UserPanel();
-let avatars = new Avatar();
-let menus = new Menu();
-let logout = new Logout();
-let finance = new Finance();
 let list = new List();
 let products = new Products();
+let finance = new Finance();
+
+$('#mobile-menu').on('click', () => {
+    $('.mobile-menu').toggleClass('active');
+    $('.header').slideToggle();
+});
 

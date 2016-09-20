@@ -49,50 +49,38 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-@import 'colors';
-
+@import 'fonts';
+@import 'typography';
 @import 'variables';
 @import 'buttons';
+@import 'helpers';
 
 
 // @include components
 
-@import 'header';
 
-@import 'components/avatar';
+@import 'components/header';
 @import 'components/user-panel';
 @import 'components/menu';
 @import 'components/finance';
 @import 'components/list';
 @import 'components/logout';
 @import 'components/products';
+@import 'components/account';
 
-
-
-.no-padding {
-  padding: 0;
-}
-
-.flex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.vertical-middle {
-  display: table;
-
-  & > * {
-    display: table-cell;
-    vertical-align: middle;
-    height: 100%;
-  }
-}
 
 main {
-  background-color: #d9dada;
+  background-color: $main-color;
 }
 
 section {
   padding: 1rem 0;
 }
+
+// Chart
+
+.highcharts-container {
+  border-radius: .5rem;
+  overflow: hidden;
+}
+

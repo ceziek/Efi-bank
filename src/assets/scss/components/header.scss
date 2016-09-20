@@ -1,0 +1,119 @@
+// Menu only for mobile
+.mobile-menu {
+  display: none;
+  position: fixed;
+  height: 4rem;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  background-color: transparent;
+  z-index: 101;
+  transition: all .6s;
+  .button-add {
+    opacity: 0.5;
+    transition: all .6s;
+    &:hover {
+      opacity: 1;
+      background-color: $base-color;
+      color: #fff;
+    }
+  }
+  &.active {
+    background-color: $main-color;
+  }
+}
+
+//----------------
+
+.header {
+  background-color: $base-color;
+  color: $header-font-color;
+  z-index: 101;
+}
+
+.header-credits {
+  text-align: left;
+  img {
+    max-width: 6rem;
+    border-radius: .5rem;
+  }
+  & > div {
+    margin-left: 1rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 1000px) {
+  .mobile-menu {
+    display: block;
+  }
+  .header {
+    display: none;
+    position: fixed;
+    padding: 2rem 0;
+    top: 4rem;
+    left: 0;
+    right: 0;
+    .wrapper {
+      &.flex {
+        flex-flow: column;
+      }
+    }
+  }
+
+  .header-credits {
+    img {
+      max-width: 5rem;
+    }
+  }
+
+}
+
+@media screen and (max-width: 800px) {
+}
+
+@media screen and (max-width: 600px) {
+
+}
+
+@media screen and (max-width: 479px) {
+
+}
+
+/*
+.mobile-menu {
+  display: block;
+}
+.header {
+  display: none;
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  padding: 1rem .5rem;
+  .row {
+    height: auto;
+  }
+  .header-credits {
+    img {
+      max-height: 5rem;
+    }
+  }
+  .menu {
+    margin: 1rem 0;
+    & > * {
+      display: inline-block;
+      width: 50%;
+      margin-top: 1rem;
+    }
+  }
+  .logout {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+}*/

@@ -1,27 +1,72 @@
 .products {
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
+  &.flex {
+    flex-flow: row wrap;
+  }
+}
 
-  .product {
-    padding: 1rem;
-    margin: 1rem 0;
-    background-color: #fff;
+.product {
+  flex-basis: 47%;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  transition: all .6s;
 
+  background-color: #fff;
+  border-radius: 5px;
+  &.flex {
     justify-content: flex-start;
-    flex-basis: 48%;
-
-    border-radius: 5px;
-
-    &:hover {
-      background-color: $base-color;
+  }
+  &:hover {
+    background-color: $base-color;
+  }
+  div {
+    &:first-child {
+      width: 5rem;
     }
+    &:last-child {
+      padding-left: 1rem;
+    }
+  }
+  img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+
+}
+
+@media screen and (max-width: 1000px) {
+  .product {
+    flex-basis: 90%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .products {
+    &.flex {
+      justify-content: space-between;
+    }
+  }
+  .product {
+    flex-basis: 49%;
 
   }
-  .icon {
-    img {
-      height: 4.5rem;
-      margin-right: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  .product {
+    flex-basis: 100%;
+    &.flex {
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .product {
+    flex-basis: 100%;
+    &.flex {
+      justify-content: flex-start;
     }
   }
 }

@@ -2,57 +2,49 @@
 
 class List {
     constructor() {
-        this.elems = document.querySelectorAll('.list');
+        this.element = document.querySelector('.list');
 
         this.params = {
             endpoint: '/data/history',
-            method: 'GET',
             data: {},
             success: (res) => {
                 let response = res.content;
-                response.forEach((res) => {
-                    this.component.push(this.template(res))
-                });
+                response.forEach((res) => this.component.unshift(this.template(res)));
                 this.render();
-            },
-            error: (res) => console.log(res,'error'),
-            before: () => {},
-            complete: () => {}
+            }
         };
 
         this.template = (res) => {
             let date = new Date(res.date);
-            let amount = locale(res.amount);
+            let dateMoment = moment(date);
+            let style = "";
 
-            let shortDate = date.getDay() + '.' + date.getMonth();
+            if (res.status === "income") {
+                style = "color:#00d400"
+            } else {
+                res.amount = -res.amount
+            }
 
-            return `<li>
-                      <div class="row flex ">
-                        <div class="large-2 columns text-center">
-                          <span>${shortDate}</span>
+            return `<li class="list-element flex">
+                        <span>${dateMoment.format("DD.MM")}</span>
+                        <div>
+                            <p>${res.description}</p>
+                            <select name="choose" id="choose">
+                                <option value="gas">Gas</option>
+                                <option value="cash">Cash</option>
+                                <option value="salary">Salary</option>
+                                <option value="food">Food</option>
+                            </select>
                         </div>
-                        <div class="large-7 columns">
-                          <div class="row">
-                            <div class="large-12 columns"><p>${res.description}</p></div>
-                          </div>
-                          <div class="row">
-                            <div class="large-12 columns"><p>choose</p></div>
-                          </div>
-                        </div>
-                        <div class="large-3 columns text-center">
-                          <span id="hist-amount">${amount}</span>
-                        </div>
-                      </div>
+                        <span><b style=${style}>${res.amount.toLocaleString('pl')}</b> ${res.currency}</span>
                     </li>`;
         };
-
         this.component = [];
 
-        let listAjax = new Ajax(this.params);
-        listAjax.send();
+        Ajax.send(this.params);
     }
 
     render() {
-        this.elems.forEach((elem) => elem.innerHTML = '<ul>' + this.component.join('') + '</ul>');
+        this.element.innerHTML = '<ul>' + this.component.join('') + '</ul>';
     }
 }

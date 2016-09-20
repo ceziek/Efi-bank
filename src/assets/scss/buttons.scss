@@ -1,8 +1,16 @@
 .button-add {
-  height: 40px;
-  width: 90%;
-  margin: 20px 0;
+  margin: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
 
-  background-color: #13bdd2;
+  color: #fff;
+  background-color: $base-color;
+
   border-radius: 2px;
+  border: none;
+  transition: all .6s;
+  &:hover {
+    color: #000;
+    background-color: #fff;
+  }
 }

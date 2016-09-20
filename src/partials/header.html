@@ -1,22 +1,24 @@
+<!--Mobile menu visible only below 1000px-->
+<div class="mobile-menu text-right">
+    <button id="mobile-menu" class="button-add">MENU</button>
+</div>
+<!-- --------------- -->
+
 <div class="header">
-  <div class="row collapse">
-    <div class="large-4 columns flex menu">
-      <div class="large-3 columns no-padding text-center">
-        {{> logo}}
-      </div>
-      <div class="large-3 columns no-padding text-center">
-        {{> avatar}}
-      </div>
-      <div class="large-6 columns">
-        {{> user-panel}}
-      </div>
+    <div class="wrapper flex">
+        <div class="header-credits flex">
+            <img src="../assets/img/logo.png" alt="Efigence Logo">
+            <img src="../assets/img/avatar.png" alt="Avatar">
+            <div class="user-panel">
+                {{> user-panel}}
+            </div>
+        </div>
+        <div class="menu flex">
+            {{> menu}}
+        </div>
+        <div class="logout">
+            {{> logout}}
+        </div>
     </div>
-    <div class="large-4 large-push-1 columns menu flex">
-      {{> menu}}
-    </div>
-    <div class="large-1 columns vertical-middle menu">
-      {{> logout}}
-    </div>
-  </div>
 </div>
 
